@@ -1,0 +1,20 @@
+services:
+  web:
+    container_name: nginx-datmsc3
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports:
+      - 8080:80
+      - 443:443
+
+  database:
+    container_name: postgres-datmsc3
+    image: postgres:latest
+    ports:
+      - 5433:5432
+    volumes:
+      - C:/SST/2024-2025/DAT620/DAT620-MSC3set/nginx-primer/data/postgres/datMSC3:/data/postgres
+    env_file:
+      - datmsc3.env
+    

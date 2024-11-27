@@ -1,0 +1,10 @@
+services:
+  database:
+    container_name: postgres-datmsc3
+    image: postgres:latest
+    ports:
+      - 5433:5432
+    volumes:
+      - C:\SST\2024-2025\DAT620\DAT620-MSC3set\data\postgres\datMSC3:/data/postgres
+    env_file:
+      datmsc3.env
